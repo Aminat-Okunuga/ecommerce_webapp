@@ -18,12 +18,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
-
 Route::match(['get', 'post'], '/admin', [AdminController::class, 'login']);
 
-Route::get('/admin/dashboard', [AdminController::class, 'dashboard']);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::group(['middleware'=>['auth']], function(){
+    Route::get('/admin/dashboard', [AdminController::class, 'dashboard']);
+});
 
 Route::get('/logout', [AdminController::class, 'logout']);
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
