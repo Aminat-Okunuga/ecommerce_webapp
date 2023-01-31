@@ -27,6 +27,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::group(['middleware'=>['auth']], function(){
     Route::get('/admin/dashboard', [AdminController::class, 'dashboard']);
     Route::get('/admin/settings', [AdminController::class, 'settings']);
+    Route::get('/admin/check-pwd', [AdminController::class, 'chkPassword']);
+    Route::match(['get', 'post'], '/admin/update-pwd', [AdminController::class, 'updatePassword']);
 });
 
 Route::get('/logout', [AdminController::class, 'logout']);
