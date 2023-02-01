@@ -33,6 +33,7 @@ Route::group(['middleware'=>['auth']], function(){
 
     // Categories Route (AAdmin)
     Route::match(['get', 'post'], '/admin/add-category', [CategoryController::class, 'addCategory']);
+    Route::get('/admin/view-categories', [CategoryController::class, 'viewCategory']);
 
 });
 
