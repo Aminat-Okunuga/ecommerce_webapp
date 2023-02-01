@@ -29,6 +29,10 @@ Route::group(['middleware'=>['auth']], function(){
     Route::get('/admin/settings', [AdminController::class, 'settings']);
     Route::get('/admin/check-pwd', [AdminController::class, 'chkPassword']);
     Route::match(['get', 'post'], '/admin/update-pwd', [AdminController::class, 'updatePassword']);
+
+    // Categories Route (AAdmin)
+    Route::match(['get', 'post'], '/admin/add-category', [CategoryController::class, 'addCategory']);
+
 });
 
 Route::get('/logout', [AdminController::class, 'logout']);
