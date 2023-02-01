@@ -13,6 +13,8 @@ class AdminController extends Controller
     public function login(Request $request){
         if($request->isMethod('post')){
             $data= $request->input();
+            // $password = bcrypt($data['password']);
+            // print_r($password); die;
             // echo $data['email']; die;
             if(Auth::attempt(['email'=>$data['email'], 'password'=>$data['password'], 'admin'=>'1'])){
                 // echo "hey, I entered here!"; die;
