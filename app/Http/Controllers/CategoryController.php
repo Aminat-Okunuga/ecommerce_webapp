@@ -15,6 +15,7 @@ class CategoryController extends Controller
             $category->description = $data['description'];
             $category->url = $data['url'];
             $category->save();
+            // redirect to view categories page with success message
             return redirect('/admin/view-categories')->with('flash_message_success', 'Category Successfully Added!');
         }
         return view('admin.categories.add_category');
