@@ -20,7 +20,8 @@ class CategoryController extends Controller
             // redirect to view categories page with success message
             return redirect('/admin/view-categories')->with('flash_message_success', 'Category Successfully Added!');
         }
-        return view('admin.categories.add_category');      
+        $levels = Category::where(['parent_id'=>0])->get();
+        return view('admin.categories.add_category')->with(compact('levels'));
     }
 
     public function viewCategory(){
