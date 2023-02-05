@@ -10,57 +10,17 @@ class CategoryController extends Controller
     public function addCategory(Request $request){
         if($request->isMethod('post')){
             $data = $request->all();
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
             // echo "<pre>"; die;
->>>>>>> main
->>>>>>> master
-=======
->>>>>>> ab2fc295796a08f01a5ebe8b8500cf0f6699c8ff
-=======
-=======
-            // echo "<pre>"; die;
->>>>>>> main
->>>>>>> master
             $category = new Category;
             $category->name = $data['category_name'];
             $category->description = $data['description'];
             $category->url = $data['url'];
             $category->save();
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> master
+
             // redirect to view categories page with success message
             return redirect('/admin/view-categories')->with('flash_message_success', 'Category Successfully Added!');
         }
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-            // redirect to view categories page with success message
-            return redirect('/admin/view-categories')->with('flash_message_success', 'Category Successfully Added!');
-        }
-=======
-        }
-        // echo "test"; die;
->>>>>>> main
->>>>>>> master
-=======
-            // redirect to view categories page with success message
-            return redirect('/admin/view-categories')->with('flash_message_success', 'Category Successfully Added!');
-        }
->>>>>>> ab2fc295796a08f01a5ebe8b8500cf0f6699c8ff
-=======
-        }
-        // echo "test"; die;
->>>>>>> main
->>>>>>> master
-        return view('admin.categories.add_category');
+        return view('admin.categories.add_category');      
     }
 
     public function viewCategory(){
