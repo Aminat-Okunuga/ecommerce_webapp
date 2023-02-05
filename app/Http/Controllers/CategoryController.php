@@ -10,14 +10,23 @@ class CategoryController extends Controller
     public function addCategory(Request $request){
         if($request->isMethod('post')){
             $data = $request->all();
+<<<<<<< HEAD
+=======
+            // echo "<pre>"; die;
+>>>>>>> main
             $category = new Category;
             $category->name = $data['category_name'];
             $category->description = $data['description'];
             $category->url = $data['url'];
             $category->save();
+<<<<<<< HEAD
             // redirect to view categories page with success message
             return redirect('/admin/view-categories')->with('flash_message_success', 'Category Successfully Added!');
         }
+=======
+        }
+        // echo "test"; die;
+>>>>>>> main
         return view('admin.categories.add_category');
     }
 
