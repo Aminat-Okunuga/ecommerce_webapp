@@ -33,7 +33,9 @@ Route::group(['middleware'=>['auth']], function(){
 
     // Categories Route (AAdmin)
     Route::match(['get', 'post'], '/admin/add-category', [CategoryController::class, 'addCategory']);
-
+    Route::get('/admin/view-categories', [CategoryController::class, 'viewCategory']);
+    Route::match(['get', 'post'], '/admin/edit-category/{id}', [CategoryController::class, 'editCategory']);
+    Route::match(['get', 'post'], '/admin/delete-category/{id}', [CategoryController::class, 'deleteCategory']);
 });
 
 Route::get('/logout', [AdminController::class, 'logout']);

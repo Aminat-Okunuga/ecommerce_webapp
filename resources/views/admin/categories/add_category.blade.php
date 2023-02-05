@@ -14,7 +14,15 @@
             <h5>Add Category</h5>
           </div>
           <div class="widget-content nopadding">
+<<<<<<< HEAD
+            <form class="form-horizontal" method="post" action="{{url('/admin/add-category')}}" name="add_category" id="add_category" novalidate="novalidate"> {{csrf_field()}}
+=======
+<<<<<<< HEAD
+            <form class="form-horizontal" method="post" action="{{url('/admin/add-category')}}" name="add_category" id="add_category" novalidate="novalidate"> {{csrf_field()}}
+=======
             <form class="form-horizontal" method="post" action="{{url('/admin/add-category') }}" name="add_category" id="add_category" novalidate="novalidate"> {{csrf_field()}}
+>>>>>>> main
+>>>>>>> master
               <div class="control-group">
                 <label class="control-label">Category Name</label>
                 <div class="controls">
@@ -24,7 +32,15 @@
               <div class="control-group">
                 <label class="control-label">Description</label>
                 <div class="controls">
+<<<<<<< HEAD
+                  <input type="text" name="description" id="description">
+=======
+<<<<<<< HEAD
+                  <input type="text" name="description" id="description">
+=======
                   <textarea name="description" id="description"></textarea>
+>>>>>>> main
+>>>>>>> master
                 </div>
               </div>
               <div class="control-group">
