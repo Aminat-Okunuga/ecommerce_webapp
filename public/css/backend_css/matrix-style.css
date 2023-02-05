@@ -243,7 +243,7 @@ hr{ border-top-color:#dadada;}
 #breadcrumb a {
 	padding: 8px 20px 8px 10px;
 	display: inline-block;
-	background-image: url('../img/breadcrumb.png');
+	background-image: url('../../images/backend_images/breadcrumb.png');
 	background-position: center right;
 	background-repeat: no-repeat;
 	font-size: 11px;
@@ -1407,7 +1407,7 @@ form {
 	font-size:12px;
 }
 #sidebar > ul li a i {
-	background-image: url("../img/glyphicons-halflings-white.png");
+	background-image: url("../../../images/backend_images/glyphicons-halflings-white.png");
 	margin-top:4px;
 	vertical-align: top;
 }
