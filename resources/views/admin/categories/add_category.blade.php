@@ -23,7 +23,7 @@
               </div>
                 <label class="control-label">Category Level</label>
                 <div class="controls">
-                  <select name="parent_id" id="">
+                  <select name="parent_id" id="" style="width: 220px">
                     <option value="0">Main Category</option>
                     @foreach($levels as $val)
                       <option value="{{$val->id}}">{{$val->name}}</option>
@@ -31,7 +31,6 @@
                   </select>
                 </div>
               </div>
-              
               <div class="control-group">
                 <label class="control-label">Description</label>
                 <div class="controls">
@@ -44,7 +43,6 @@
                   <input type="text" name="url" id="url">
                 </div>
               </div>
-              
               <div class="form-actions">
                 <input type="submit" value="Add Category" class="btn btn-success">
               </div>

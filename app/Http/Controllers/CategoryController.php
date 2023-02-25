@@ -13,6 +13,7 @@ class CategoryController extends Controller
             // echo "<pre>"; die;
             $category = new Category;
             $category->name = $data['category_name'];
+            $category->parent_id = $data['parent_id'];
             $category->description = $data['description'];
             $category->url = $data['url'];
             $category->save();
@@ -37,13 +38,14 @@ class CategoryController extends Controller
             return redirect('/admin/view-categories')->with('flash_message_success', 'Category Updated Successfully!');
         }
         $categoryDetails = Category::where(['id' =>$id])->first();
-        return view('admin.categories.edit_category')->with(compact('categoryDetails'));
+        $levels = Category::where(['parent_id'=>0])->get();
+        return view('admin.categories.edit_category')->with(compact('categoryDetails', 'levels'));
     }
 
     public function deleteCategory($id = null){
         if(!empty($id)){
             Category::where(['id'=>$id])->delete();
-            return redirect()->back()->with('flash_message_success', 'Category ddeleted Successfully!');
+            return redirect()->back()->with('flash_message_success', 'Category deleted Successfully!');
         }
     }
 
